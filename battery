@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "Load: " && cat /sys/class/power_supply/BAT0/caapacity || echo "Error al leer la carga de la battería"
+echo "Load: " && cat /sys/class/power_supply/BAT0/capacity || echo "Error al leer la carga de la battería"
 echo "Status: " && cat /sys/class/power_supply/BAT0/status || echo "Error al leer el estado de la batería"

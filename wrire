@@ -1,17 +1,20 @@
-#!/bin/sh
-#Creamos carpeta, fichero pdf y tex, iniciamos.
-newdir=0
-warn=0
-for i in "$*"
-do
-    if [$i = "img" -a $newdir -eq 0 -a $warn -eq 0]
-    then
-        #mkdir /report
-        newdir=1
-    elif[$i="img"]
-        echo "Solo se creará un directorio \"img\"."
-        warn=1
-    elif[$i!="img"]
-        echo "No se reconoce el input. Solo se generará el directorio padre."
-    fi
-done
+#!/bin/bash
+
+[ -e report ] && echo "Ya existe un directorio \"report\"." || mkdir report
+
+
+#newdir=0
+#warn=0
+#for i in "$*"
+#do
+#    if [$i = "img" -a $newdir -eq 0 -a $warn -eq 0 ]
+#    then
+#        #mkdir /report
+#        newdir=1
+#    elif[$i="img"]
+#        echo "Solo se creará un directorio \"img\"."
+#        warn=1
+#    elif[$i!="img"]
+#        echo "No se reconoce el input. Solo se generará el directorio padre."
+#    fi
+#done

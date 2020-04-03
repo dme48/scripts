@@ -11,7 +11,8 @@ MSG1="Directorio \"report\" presente, no se duplicará."
 MSG2="Directorio \"img\" presente, omitiendo opción \"img\"."
 MSG3="Fichero \"bibliografia.bib\" presente, omitiendo opción \"bib\"."
 MSG4="Argumento \"${i}\" no reconocido."
-[ -e report ] && echo || mkdir report
+DIR1="/home/diego/.vim/snippets/latex/"
+[ -e report ] && echo || mkdir report && cp "${DIR1}init.tex" report/report.tex; cp "${DIR1}init.pdf" report/report.pdf
 
 
 for i in "$*"

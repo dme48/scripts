@@ -7,18 +7,22 @@
 
 #The arguments are fed simply by adding the words after the command. For example, to create the report and img folders and the .bib file, you should execute "wrire img bib".
 #--------------------------------------------------------------------
-[ -e report ] && echo "Ya existe un directorio \"report\"." || mkdir report
+MSG1="Directorio \"report\" presente, no se duplicará." 
+MSG2="Directorio \"img\" presente, omitiendo opción \"img\"."
+MSG3="Fichero \"bibliografia.bib\" presente, omitiendo opción \"bib\"."
+MSG4="Argumento \"${i}\" no reconocido."
+[ -e report ] && echo || mkdir report
 
 
 for i in "$*"
 do
     if [ "$i" = "img" ]
     then
-        [ -e report/img ] && echo "Ya existe un directorio \"img\", omitiendo esta opción." || mkdir report/img
+        [ -e report/img ] && echo $MSG2 || mkdir report/img
     elif [ "$i" = "bib" ]
     then
-        [ -e report/bibliografia.bib ] && echo "Ya existe un fichero \"bibliografia.bib\", omitiendo esta opción." || cp /home/diego/.vim/snippets/latex/bibtex.bib report/bibtex.bib
+        [ -e report/bibliografia.bib ] && echo $MSG3 || cp /home/diego/.vim/snippets/latex/bibtex.bib report/bibtex.bib
     else
-        echo "No se ha reconocido el argumento \"${i}\""
+        echo $MSG4
     fi
 done

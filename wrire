@@ -12,10 +12,10 @@
 
 for i in "$*"
 do
-    if [ "i" = "img" ]
+    if [ "$i" = "img" ]
     then
         [ -e report/img ] && echo "Ya existe un directorio \"img\", omitiendo esta opción." || mkdir report/img
-    elif [ "i" = "bib" ]
+    elif [ "$i" = "bib" ]
     then
         [ -e report/bibliografia.bib ] && echo "Ya existe un fichero \"bibliografia.bib\", omitiendo esta opción." || cp /home/diego/.vim/snippets/latex/bibtex.bib report/bibtex.bib
     else

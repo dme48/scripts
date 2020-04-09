@@ -11,7 +11,7 @@ MSG1="Directorio \"report\" presente, no se duplicará."
 MSG2="Directorio \"img\" presente, omitiendo opción \"img\"."
 MSG3="Fichero \"bibliografia.bib\" presente, omitiendo opción \"bib\"."
 MSG4="Argumento \"${i}\" no reconocido."
-DIR1="/home/diego/.vim/snippets/latex/"
+DIR1="/home/diego/.config/nvim/snippets/latex/"
 [ -e report ] && echo || mkdir report && cp "${DIR1}init.tex" report/report.tex; cp "${DIR1}init.pdf" report/report.pdf
 
 
@@ -22,7 +22,7 @@ do
         [ -e report/img ] && echo $MSG2 || mkdir report/img
     elif [ "$i" = "bib" ]
     then
-        [ -e report/bibliografia.bib ] && echo $MSG3 || cp /home/diego/.vim/snippets/latex/bibtex.bib report/bibtex.bib
+        [ -e report/bibliografia.bib ] && echo $MSG3 || cp "${DIR1}bibtex.bib" report/bibtex.bib
     else
         echo $MSG4
     fi

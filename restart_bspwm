@@ -1,0 +1,3 @@
+/home/diego/.config/bspwm/bspwmrc &
+pkill sxhkd &
+sxhkd -c /home/diego/.config/sxhkd/sxhkdrc
